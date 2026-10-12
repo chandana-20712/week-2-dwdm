@@ -1,0 +1,105 @@
+AIM:ToperformdifferentclassificationalgorithmsondatasetsinWeka(ID3,J48, NaïveBayes,andk-NN),analyzeentropyandKappastatistic,extractrules,plotROC curves, and compare classifier performance.
+ExploringandLoadingDatasetsinWEKA
+WEKAcomesbundledwithseveralsampledatasetssuchasIris,Weather,Diabetes,etc. Toexplore datasets:
+1.	OpenWEKAExplorer.
+2.	ClickOpenfileinthePreprocesspanel.
+3.	NavigatetothedatafolderwithintheWEKAinstallationdirectory.
+4.	Selectadatasetlikeiris.arfforweather.arff.
+Loadingadatasetallowsyoutoviewtheattributesandinstancesandapplypreprocessing, classification, clustering,and more.
+
+Example:LoadingtheIrisDataset
+OpenWEKAExplorer.
+InthePreprocesspanel,clickOpenfile. Select the iris.arff file.
+Thedatasetloadsanddisplaysattributessuchassepallength,sepalwidth,petallength,petal width,and class.
+Youcannowproceedtoclassify,cluster,orvisualizethisdataset.
+ 
+ 
+Afterloadingtheirisdatasetthevisualizationofthepreprocessisasshowninthefigure. Theattributesaresepallength ,sepalwidth,petallength,petalwidth.
+Thevalueandstatisticoftheeachattributeisasshown. Histogramsofeachattributeofthedataisshownbelow.
+
+
+Discretizingthedata:
+•	Itisimportanttodiscritizethedatabecauseitinvolvestransformingcontinuous numericattributes into discrete,categorical (nominal) attributes.
+•	Openthefilter.
+•	SelecttheUnsuperviseddata.
+ 
+•	Clickonthediscretize.
+•	Applythisfilteronthedata.
+
+FilterApplication:A"Discretize"filterhasbeenappliedtothe"iris"dataset.This
+filter,Discretize-B10-M-1.0-Rfirst-last-precision6,transformsnumericalattributesinto nominal(categorical)onesbydividingtheminto10bins.
+ 
+Classificationonthedata:
+•	Toapplytheclassificationonthedataset,clickontheclassifypanel.
+•	Selectthedifferentalgorithmstoperformonthedata(J48,Id3,etc.., classificationalgorithms).SelecttheJ48algorithmasshowninfig.
+
+AfterapplyingtheJ48algorithm,thedefaultCross-validationfolds10intestoptions. Clickonthestartbuttonto see the classifieroutput.
+ 
+ 
+VisualizationofaJ48algorithmintreemode:
+•	Intheresultlist,itshowsthepresentrunningalgorithm.
+•	Clickontherightsidetoseemoreoptions.
+•	ClickontheVisualizetreeoptiontoseetheoutputinthetreemode.
+•	Dotheprocessasshowninthefigure.
+
+
+Classifiertreevisualizerasshowninfig.
+
+ 
+2.	LoadeachdatasetintoWeka/RandperformNaïve-bayesclassificationandk- Nearest Neighbour classification. Interpret the results obtained.
+DATASET:
+
+•	PerformingtheNaïve-bayesclassificationonthesamedataset(i.e..isIrisdataset).
+•	HerethedatasetIrisisalreadyindiscretizationmodeaswedoneintheabove algorithm.
+•	Clickontheclassifypanel.
+•	SelecttheClassifiersandopenthebayes.
+•	InthatbayesselecttheNaiveBayesalgorithm.
+•	Dotheprocessasshowninthefigure.
+
+
+
+AfterchoosingtheNavie-BayesAlgorithm:
+•	Inthetestoptionsthedefaultcrossvalidationfoldsis10.
+•	ClickonthestartbuttontoobservetheclassifieroutputfortheNavie-bayesAlgorithm.
+ 
+ 
+-NearestNeighbourClassificationalgorithm:
+•	KItisalsooneoftheclassificationalgorithmlikeJ48,Id3etc..
+•	ChoosetheIBkalgorithmfromthelazyclassifiers.
+•	Asshowninfigure.
+
+AfterchoosingtheIBkAlgorithm
+•	Inthetestoptionsthedefaultcrossvalidationfoldsis10.
+ 
+•	ClickonthestartbuttontoobservetheclassifieroutputfortheIBkAlgorithm.
+
+
+
+HereitistheGenericObjectEditorfortheclassificationontheirisdatasetwithIbkclassificationalgorithm.
+
+PlotRoCCurves
+ROCCurveVisualizationinWeka(IBkClassifier)
+ 
+•	AfterexecutingtheIBk(k=3)classifierontheIrisdatasetusing10-foldcross- validation,theresultsarelistedundertheResultlist.
+•	Byright-clickingontheclassifierresult,Wekaprovidesmultipleoptionsfor analyzing the model.
+
+
+
+•	ClickontheVisualizethresholdcurve,inthatselecttheIris-setosa.
+•	ROCCurveplotstheTruePositiveRate(TPR)againsttheFalsePositiveRate (FPR).
+•	Itisusedto evaluatethe discriminative abilityofa classifier.
+•	The Area Under Curve (AUC) values shown in the summary are very close to 1.0, indicatingthattheclassifierhashighaccuracyandstrongclassseparationcapability.
+ 
+•	ClickontheVisualizethresholdcurve,inthatselecttheIris-versicolor.
+•	ROCCurveplotstheTruePositiveRate(TPR)againsttheFalsePositiveRate (FPR).
+•	Itisusedto evaluatethe discriminative abilityofa classifier.
+•	The Area Under Curve (AUC) values shown in the summary are very close to 1.0, indicatingthattheclassifierhashighaccuracyandstrongclassseparationcapability.
+
+
+
+•	ClickontheVisualizethresholdcurve,inthatselecttheIris-versicolor.
+•	ROCCurveplotstheTruePositiveRate(TPR)againsttheFalsePositiveRate (FPR).
+•	Itisusedto evaluatethe discriminative abilityofa classifier.
+•	The Area Under Curve (AUC) values shown in the summary are very close to 1.0, indicatingthattheclassifierhashighaccuracyandstrongclassseparationcapability.
+ 
+ 
